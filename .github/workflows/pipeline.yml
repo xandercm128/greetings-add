@@ -103,8 +103,8 @@ jobs:
         
   create-issue-on-failure:
   
-    #permission:
-      #issues: write
+    permissions:
+      issues: write
     needs: [test-run, count-args]
     if: always() && failure()
     uses: ./.github/workflows/create-failure-issue.yml
